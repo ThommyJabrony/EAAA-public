@@ -1,2 +1,3 @@
 # EAAA-public
-Sem2 Exam project
+
+Projects are stored in branches
