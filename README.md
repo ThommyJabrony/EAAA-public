@@ -1,3 +1,2 @@
-# EAAA-public
-
-Projects are stored in branches
+# empty
+used for making new branches
