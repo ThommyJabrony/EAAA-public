@@ -9,4 +9,4 @@ Link to library: https://github.com/cpldcpu/light_ws2812
 
 Link to video: https://youtu.be/_9QqvQuexr8
 
-[![Watch the video](https://www.img.youtube.com/watch?v=_9QqvQuexr8/maxresdefault.jpg)](https://www.youtube.com/watch?v=_9QqvQuexr8)
+[![Watch the video](https://i.ytimg.com/an_webp/_9QqvQuexr8/mqdefault_6s.webp?du=3000&sqp=CKbjqaIG&rs=AOn4CLDLNrMm7Po7JA2Sz2o0mx6iO_cpXQ)](https://www.youtube.com/watch?v=_9QqvQuexr8)
