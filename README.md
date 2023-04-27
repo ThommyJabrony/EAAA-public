@@ -2,4 +2,4 @@
 
 # EAAA-public - jumpyGuy game
 
-Game made for 16x16 led matrix. Jump over the walls.
+Game written for Atmega1284 using 16x16 led matrix as display. Jump over the walls.
