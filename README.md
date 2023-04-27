@@ -11,7 +11,6 @@ Link to video: https://youtu.be/_9QqvQuexr8
 
 [![Watch the video](https://i.ytimg.com/an_webp/_9QqvQuexr8/mqdefault_6s.webp?du=3000&sqp=CKbjqaIG&rs=AOn4CLDLNrMm7Po7JA2Sz2o0mx6iO_cpXQ)](https://www.youtube.com/watch?v=_9QqvQuexr8)
 
+<img src="https://i.imgur.com/eLuGCKw.png" alt="wiring diagram" width="30%" height="30%">
 
-
-[Imgur](https://i.imgur.com/eLuGCKw.png)
-This is the closest I could get to the setup in fritzing, and it's more approachable as it's completely without hand soldering.
+This is the closest I could get to the setup in fritzing. If nothing else, it's more approachable without any hand soldered parts.
