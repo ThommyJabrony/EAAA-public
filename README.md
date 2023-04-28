@@ -11,7 +11,7 @@ Link to library: https://github.com/cpldcpu/light_ws2812
 Link to video: https://youtu.be/_9QqvQuexr8
 
 
-[![Watch the video](https://i.imgur.com/rZstE7J.gif)](https://www.youtube.com/watch?v=_9QqvQuexr8)
+[![Watch the video](https://i.imgur.com/rZstE7J.gif) size = 110%](https://www.youtube.com/watch?v=_9QqvQuexr8)
 
 
 
