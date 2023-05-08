@@ -14,12 +14,34 @@
 
 unsigned long OvF = 0;
 char keepJumping = 0;
+bool overflown = false;
+int highscore = 1;
+int score = 0;
+bool flag2 = false;
 
 
+char wow[256]   // array that spells out "you died" in dark souls fashion
+{
+
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+	
+	0,1,0,1,0,0,0,1,1,0,0,0,1,0,1,0,
+	0,1,0,1,0,0,1,0,0,1,0,0,1,0,1,0,
+	1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,
+	1,0,1,0,1,0,0,1,1,0,0,1,0,1,0,1,
+};
 
 char death[256]   // array that spells out "you died" in dark souls fashion
 {
-
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -48,7 +70,11 @@ char death[256]   // array that spells out "you died" in dark souls fashion
 ISR (TIMER2_OVF_vect)	//overflow interrupt function
 {
     OvF++;				//adds one to overflow long
-	if(OvF > 99999999) OvF = 0;	//resets if it passes a certain value
+	if(OvF > 99999990)
+	{
+		OvF = 0;	//resets if it passes a certain value
+		overflown = true;
+	}
 }
 
 void mainMan()
@@ -66,7 +92,9 @@ void mainMan()
 	while(1)
 	{
 		/*************************The wall*/
-		Wall.move(OvF);
+		if(flag) Wall.move(OvF);
+		else	 score += Wall.move(OvF);
+		
 		
 		
 		/*************************jumping*/
@@ -81,6 +109,7 @@ void mainMan()
 				Wall.resetSpeed();
 				Wall.seed = OvF;		//seeds rand() with timer value, 0-255
 				srand(Wall.seed);
+				
 			}
 		}
 		else if(keepJumping > 0)	keepJumping = Guy.jump(OvF);
@@ -97,15 +126,38 @@ void mainMan()
 		
 		if(guyx == wallx && guyy <= wally && flag == false)			//triggers if the guy isn't completely over the wall.
 		{
-			arrayPlot(false,death);	//smiley(0);
+			
 			
 			Guy.done();
 			keepJumping = 0;
 			
 			flag = true;
+			
+			if(score > highscore+1) 
+			{
+				highscore = score;
+				arrayPlot(false, wow,'y');		//plots highscore beaten screen in hardcoded yellow
+			}
+			else arrayPlot(false,death,'r');	//plots death screen in hardcoded red	
+			score = 0;
+			
+			
+			
 		}
 		
-
+		/*********************Overflown*/
+		if(overflown)
+		{
+			Wall.reset();
+			Guy.reset();
+			overflown = false;
+			
+		}
+		
+		
+		
+		/**********************set leds*/
+		SafeSetLeds(256);							// calls function that sets led's with regard to not overusing power, to protect leds from overheating and power supply from over drawign.
 	}
 	
 }

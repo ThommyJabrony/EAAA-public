@@ -72,23 +72,61 @@ void singleColour(int x, int y, uint8_t R, uint8_t G, uint8_t B)
 }
 
 
+/*void singleSetter(int x, int y, uint8_t R, uint8_t G, uint8_t B, int count)
+{
+	int z = 0;
+	
+	//error handling
+	if (x > 15) x = 15;
+	if (y > 15) y = 15;
+	if (x < 0)	y =  0;
+	if (x < 0)	y =  0;
+	
+	//the biz
+	z += y*16;
+	if (y % 2 == 0)		z += x;				//checks for even and determines if x axis goes up or down
+	else				z += 15-x;
+	
+	
+	
+	setColour(z, R, G, B);
+	SafeSetLeds(count);
 
-void arrayPlot(bool a, char smiley[256])
+}*/
+
+void arrayPlot(bool a, char smiley[256], char colour)
+
 { 
+	int red = 255;
+	int green = 0;
+	int blue = 0;
+		
+	if ( colour == 'r')
+	{
+		red = 255;
+		green = 0;
+		blue = 0;
+	}
+	if(colour == 'y')
+	{
+		red = 150;
+		green = 150;
+		blue = 0;
+	}
 	for(int x = 80; x < 255; x++)
 	{	
-		
+		/*
 		if(smiley[x] == 0)
 		{
 			led[x].r=0;
 			led[x].g=0;
 			led[x].b=0;
-		}
+		}*/
 		if(smiley[x] == 1)
 		{
-			led[x].r=255;
-			led[x].g=0;
-			led[x].b=0;
+			led[x].r=red;
+			led[x].g=green;
+			led[x].b=blue;
 		}
 		
 		

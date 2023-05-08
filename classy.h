@@ -36,7 +36,7 @@ public:
 
 		singleColour( x, y  , bodyR, bodyG, bodyB); //creates guy in new position
 		singleColour( x, y+1, headR, headG, headB);
-		SafeSetLeds(256);							// calls function that sets led's with regard to not overusing power, to protect leds from overheating and power supply from over drawign.
+		//SafeSetLeds(256);							// calls function that sets led's with regard to not overusing power, to protect leds from overheating and power supply from over drawign.
 	}
 	
 	void vert (bool direc)							// simply moves y coord
@@ -59,7 +59,7 @@ public:
 				prevOvF = OvF;
 				break;
 			case 1:
-				if(OvF > prevOvF + 30)
+				if(OvF > prevOvF + 15)
 				{
 					vert(true);
 					jumpState = 2;
@@ -67,7 +67,7 @@ public:
 				}
 				break;
 			case 2:
-				if(OvF > prevOvF + 40)
+				if(OvF > prevOvF + 20)
 				{
 					vert(true);
 					jumpState = 3;
@@ -75,7 +75,7 @@ public:
 				}
 				break;
 			case 3:
-				if(OvF > prevOvF + 60)
+				if(OvF > prevOvF + 30)
 				{
 					vert(true);
 					jumpState = 4;
@@ -83,7 +83,7 @@ public:
 				}
 				break;
 			case 4:
-				if(OvF > prevOvF + 70)
+				if(OvF > prevOvF + 35)
 				{
 					vert(true);
 					jumpState = 5;
@@ -91,7 +91,7 @@ public:
 				}
 				break;
 			case 5:
-				if(OvF > prevOvF + 100)
+				if(OvF > prevOvF + 50)
 				{
 					vert(true);
 					jumpState = 6;
@@ -99,7 +99,7 @@ public:
 				}
 				break;
 			case 6:
-				if(OvF > prevOvF + 120)
+				if(OvF > prevOvF + 60)
 				{
 					vert(true);
 					jumpState = 7;
@@ -107,7 +107,7 @@ public:
 				}
 				break;
 			case 7:
-				if(OvF > prevOvF + 160)
+				if(OvF > prevOvF + 80)
 				{
 					vert(true);
 					jumpState = 8;
@@ -115,7 +115,7 @@ public:
 				}
 				break;
 			case 8:
-				if(OvF > prevOvF + 160)
+				if(OvF > prevOvF + 80)
 				{
 					vert(false);
 					jumpState = 9;
@@ -123,7 +123,7 @@ public:
 				}
 				break;
 			case 9:
-				if(OvF > prevOvF + 120)
+				if(OvF > prevOvF + 60)
 				{
 					vert(false);
 					jumpState = 10;
@@ -131,7 +131,7 @@ public:
 				}
 				break;
 			case 10:
-				if(OvF > prevOvF + 100)
+				if(OvF > prevOvF + 50)
 				{
 					vert(false);
 					jumpState = 11;
@@ -139,7 +139,7 @@ public:
 				}
 				break;
 			case 11:
-				if(OvF > prevOvF + 70)
+				if(OvF > prevOvF + 35)
 				{
 					vert(false);
 					jumpState = 12;
@@ -147,7 +147,7 @@ public:
 				}
 				break;
 			case 12:
-				if(OvF > prevOvF + 60)
+				if(OvF > prevOvF + 30)
 				{
 					vert(false);
 					jumpState = 13;
@@ -155,7 +155,7 @@ public:
 				}
 				break;
 			case 13:
-				if(OvF > prevOvF + 40)
+				if(OvF > prevOvF + 20)
 				{
 					vert(false);
 					jumpState = 14;
@@ -163,7 +163,7 @@ public:
 				}
 				break;
 			case 14:
-				if(OvF > prevOvF + 30)
+				if(OvF > prevOvF + 15)
 				{
 					vert(false);
 					jumpState = 15;
@@ -171,7 +171,7 @@ public:
 				}
 				break;
 			case 15:
-				if(OvF > prevOvF + 20)
+				if(OvF > prevOvF + 10)
 				{
 					vert(false);
 					jumpState = 0;
@@ -180,7 +180,7 @@ public:
 		}
 		if( OvF + 100000 < prevOvF) prevOvF = OvF+200;
 		
-		return jumpState;		
+		return jumpState;
 		
 	}
 	
@@ -199,7 +199,10 @@ public:
 		singleColour( x, y+1, 0,	 0,		0);
 	}
 	
-	
+	void reset()
+	{
+		prevOvF = 30;
+	}
 };
 
 
@@ -220,8 +223,10 @@ private:
 	char jumpState;
 	unsigned long prevOvF;
 	char speed;
+	bool scoreFlag;
 	
 public:
+	
 	char seed;
 	
 	wall(void)
@@ -230,7 +235,7 @@ public:
 		R = 40; G = 140; B = 140;
 		jumpState = 0;
 		prevOvF = 0;
-		speed = 200;				// speed is set to five blocks per second
+		speed = 150;				// speed is set to five blocks per second
 				
 		seed = TCNT2;		//seeds rand() with timer value, 0-255
 		srand(seed);
@@ -251,13 +256,22 @@ public:
 		{
 			x = 15;
 			for(char i = 0; i < y; i++) singleColour(0, i, 0, 0, 0);
-			y = rand() % 6+1;
 			
-			if (speed > 125) speed -= 2;	//speed increases faster in the beginning
-			else			 speed -= 1;
-			R = rand() % 150 + 5;
-			G = rand() % 150 + 5;
-			B = rand() % 150 + 5;
+			
+			
+			if (speed > 100) 
+			{
+				y = rand() % 4+1;
+				speed -= 2;	//speed increases faster in the beginning
+			}
+			else
+			{
+				y = rand() % 4+3;
+				speed -= 1;
+			}
+			R = rand() % 150 + 10;
+			G = rand() % 150 + 10;
+			B = rand() % 150 + 10;
 		}
 		
 			
@@ -266,21 +280,32 @@ public:
 			singleColour(x, i, R, G, B);
 		}
 		
-		SafeSetLeds(256);
+		//SafeSetLeds(256);
 	}
 	
-	void resetSpeed() {speed = 200;}		//does what the name implies
+	void resetSpeed() {speed = 150;}		//does what the name implies
 	
-	void move(unsigned long OvF)			
+	int move(unsigned long OvF)			
 	{
 		if (OvF > prevOvF + speed)			// moves only when intended delay has been  reached. See arduino's non blocking delay for reference
 		{	
-			x = x - 1;
-			if (x < 0)	generate(true);
-			else		generate(false);
+			
 			prevOvF = OvF;
+			x = x - 1;
+			if (x == 0)
+			{
+				generate(true);
+				scoreFlag = true;
+			}
+			else
+			{
+				generate(false);
+				scoreFlag = false;
+			}
+			return scoreFlag;
+			
 		}
-		if( OvF + 100000 < prevOvF) prevOvF = OvF+200;
+		//if( OvF + 100000 < prevOvF) prevOvF = OvF+100;
 	}
 	
 	char colissionX()
@@ -290,5 +315,10 @@ public:
 	char colissionY()
 	{
 		return y;
+	}
+	
+	void reset()
+	{
+		prevOvF = 30;
 	}
 };
