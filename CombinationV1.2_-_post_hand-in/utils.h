@@ -72,7 +72,7 @@ float rect2 (float input)
 float delayer(float input)
 {
   float decay = effectThresh/12500 + 0.6; //Decay val from 0.6 to 0.95
-  buffet[idx] *= decay;
+  
   input = (input + (buffet[idx]*decay)) / (1+(buffet[idx]*decay)/(((buffet[idx]*decay)+input))); //input is mixed with value from buffer that accounts for buffer volume
   buffet[idx] = input;
   compare = effectThresh * 4.88;          //Compare match value limits buffer length
