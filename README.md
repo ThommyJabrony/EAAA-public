@@ -11,7 +11,9 @@ Software:
 to be written
 
 HARDWARE:
+
 Preamp:
+
 Preamp consists of a standard JFET opamp TL072 used in many guitar pedals.
 The first stage handles amplifications from the guitars +-0.3V to the teensy audio adapter's +-1.5V ADC input.
 The amplification is done with a voltage divider to the inverting input, with an initial resistor equal to the pot's size,
