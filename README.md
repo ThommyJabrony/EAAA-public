@@ -1,4 +1,5 @@
 # EAAA-public/Teensy-IR-Convolution-Guitar-Pedal
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/mainImg.jpg)
 
 Impulse response reverb guitar pedal using FFT convolution
 
@@ -8,7 +9,9 @@ SD library is arduino standard
 Teensy libraries by Paul Stoffregen and others
 
 Software:  
-to be written
+TBD  
+Delay is measured between 6 and 7 secs.  
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/delay.png)
 
 HARDWARE:  
 Preamp:  
