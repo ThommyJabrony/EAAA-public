@@ -7,7 +7,7 @@ Display driver is SH110X by adafruit
 SD library is arduino standard
 Teensy libraries by Paul Stoffregen and others
 
-Software:
+Software:  
 to be written
 
 HARDWARE:  
