@@ -1,5 +1,5 @@
 # EAAA-public/Teensy-IR-Convolution-Guitar-Pedal
-![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/mainImg.jpg)
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/front%20page.png)
 
 Impulse response reverb guitar pedal using FFT convolution
 
@@ -9,11 +9,18 @@ SD library is arduino standard
 Teensy libraries by Paul Stoffregen and others
 
 Software:  
-TBD  
+TBD
+Display  
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/mainImg.jpg)
+
 Delay is measured between 6 and 7 secs.  
 ![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/delay.png)
-
+  
+  
+  
+  
 HARDWARE:  
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/Schematic_teensypedal_2023-12-17.png)
 Preamp:  
 Preamp consists of a standard JFET opamp TL072 used in many guitar pedals.
 The first stage handles amplifications from the guitars +-0.3V to the teensy audio adapter's +-1.5V ADC input.
