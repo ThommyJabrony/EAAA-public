@@ -1,5 +1,5 @@
 # EAAA-public/Teensy-IR-Convolution-Guitar-Pedal
-![img missing](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/front%20page.png)
+![img missing](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/Img/IMG_20231206_203446372.jpg)
   
 Impulse response reverb guitar pedal using FFT convolution
 
@@ -34,6 +34,7 @@ Example video of them: [https://www.youtube.com/watch?v=rtive3m2jmM&list=PL1sbzf
   
 HARDWARE:  
 ![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/Schematic_teensypedal_2023-12-17.png)
+![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/Img/IMG_20231207_183939582.jpg)
 Preamp:  
 Preamp consists of a standard JFET opamp TL072 used in many guitar pedals.
 The first stage handles amplifications from the guitars +-0.3V to the teensy audio adapter's +-1.5V ADC input.
