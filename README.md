@@ -10,10 +10,8 @@ Teensy libraries by Paul Stoffregen and others
 Software:
 to be written
 
-HARDWARE:
-
-Preamp:
-
+HARDWARE:  
+Preamp:  
 Preamp consists of a standard JFET opamp TL072 used in many guitar pedals.
 The first stage handles amplifications from the guitars +-0.3V to the teensy audio adapter's +-1.5V ADC input.
 The amplification is done with a voltage divider to the inverting input, with an initial resistor equal to the pot's size,
@@ -28,6 +26,6 @@ have a forward voltage of 240 mV, according to the BATC54s datasheet.
 This could also be done more precisely by adding a trimpot after the clamp, or simply using the opamps rails as max values.
 Second stage of the opamp is used as a buffer.
 
-peripherals:
+peripherals:  
 The gain pot as mentioned is available. On top of this, there's jacks for I/O, a pot for the effect strength, a button
 and a largely redundant volume pot.
