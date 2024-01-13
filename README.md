@@ -8,7 +8,7 @@ SD library is arduino standard
 Teensy libraries by Paul Stoffregen and others
 
 Software:
-
+to be written
 
 HARDWARE:
 Preamp:
