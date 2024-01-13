@@ -1,6 +1,6 @@
 # EAAA-public/Teensy-IR-Convolution-Guitar-Pedal
-![alt text](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/front%20page.png)
-
+![img missing](https://raw.githubusercontent.com/ThommyJensen/EAAA-public/Teensy-IR-Convolution-Guitar-Pedal/front%20page.png)
+  
 Impulse response reverb guitar pedal using FFT convolution
 
 Convolution library by Brian Millier https://github.com/bmillier/Teensy-FFT-Convolution-Filter
