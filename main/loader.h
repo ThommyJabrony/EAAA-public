@@ -61,7 +61,7 @@ class Loader
       impulse_response[0] = 1; //Necessity, as empty response and initial delays in room responses otherwise choke the direct sound
       impulse_response[1] = 1; //Necessity, as empty response and initial delays in room responses otherwise choke the direct sound
       impulse_response[2] = 1; //Necessity, as empty response and initial delays in room responses otherwise choke the direct sound
-      for (int x = 1; x < arrLen; x++) impulse_response[x] = 0.0; //zero padding
+      for (int x = 3; x < arrLen; x++) impulse_response[x] = 0.0; //zero padding
     }
 
 
@@ -117,17 +117,11 @@ class Loader
         
         Serial.print("type detected, type: ");
         Serial.println(type);
-            
-        //while(1) if(!(digitalRead(selektor))) SCB_AIRCR = 0x05FA0004;   //reset teensy
-        
-
         
 
         if (type ==  1)      len = (datafile.size()-44)/2;       // int16 wav
         
         else if (type ==  0) len =  datafile.size()/2;           // int16 raw
-          
-        
         
 
         if(len  > arrLen) //checks if file is too large for memory to handle
@@ -223,16 +217,11 @@ class Loader
         Serial.println("");
           
         delete [] SD_response;                          //del int array to clear space
-        /*impulse_response[2] = 1;
-        impulse_response[3] = 1;
-        impulse_response[4] = 1;*/
-        
+                
         datafile.close();
         return 0;
       }
      
-
-
       
     }
     int emptyResponse()
